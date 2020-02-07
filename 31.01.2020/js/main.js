@@ -105,6 +105,113 @@ switch (lang) {
 
 //task 10
 
+let month = new Date().getMonth();
+let season;
+
+switch (month) {
+  case 0:
+  case 1:
+  case 11:
+    season = 'winter';
+  break;
+
+  case 2:
+  case 3:
+  case 4:
+    season = 'spring';
+  break;
+
+  case 5:
+  case 6:
+  case 7:
+    season = 'summer';
+  break;
+
+  case 8:
+  case 9:
+  case 10:
+    season = 'autumn';
+  break;
+}
+
+
 
 
 //task 11
+
+let lang = prompt('insert lang','ru, en' );
+let day = +prompt('insert day');
+
+let result;
+
+switch (lang) {
+  case 'ru':
+    switch (day) {
+      case 0:
+        result = 'воскресенье';
+      break;
+      case 1:
+        result = 'понедельник';
+      break;
+      case 2:
+        result = 'вторник';
+      break;
+      case 3:
+        result = 'среда';
+      break;
+      case 4:
+        result = 'четверг';
+      break;
+      case 5:
+        result = 'пятница';
+      break;
+      case 6:
+        result = 'суббота';
+      break;
+    }
+    break;
+
+  case 'en':
+  switch (day) {
+    case 0:
+      result = 'sunday';
+    break;
+    case 1:
+      result = 'monday';
+    break;
+    case 2:
+      result = 'tuesday';
+    break;
+    case 3:
+      result = 'wednesday';
+    break;
+    case 4:
+      result = 'thursday';
+    break;
+    case 5:
+      result = 'friday';
+    break;
+    case 6:
+      result = 'saturday';
+    break;
+  }
+    break;
+
+}
+alert(result);
+
+
+//task 12
+
+var x = +prompt('x', 0);
+var error = null;
+
+switch (x) {
+    case 0: alert('На ноль делить нельзя');
+    break;
+    case 1: alert ('На единицу делить бессмысленно');
+    break;
+    case NaN: alert ('Не математическая операция');
+    break;
+    default: alert(100 / x);
+}
