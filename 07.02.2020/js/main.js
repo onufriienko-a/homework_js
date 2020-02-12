@@ -1,9 +1,9 @@
-//task 1 (not sure if it's correct, since newKeyValue returns Array instead of inserted value)
-//Создайте объект person, описывающий персону, с произвольным количеством произвольных полей.
-//С помощью оператора in или typeof проверьте наличие в объекте свойства, прочитанного из prompt,
-//и выведите его на экран. Если свойства нет, то добавляйте его в объект со значением,
-//которое также запрашивается из prompt.
-
+// //task 1 (not sure if it's correct, since newKeyValue returns Array instead of inserted value)
+// //Создайте объект person, описывающий персону, с произвольным количеством произвольных полей.
+// //С помощью оператора in или typeof проверьте наличие в объекте свойства, прочитанного из prompt,
+// //и выведите его на экран. Если свойства нет, то добавляйте его в объект со значением,
+// //которое также запрашивается из prompt.
+//
 var person = {
   firstname: 'John',
 	lastname: 'Doe',
@@ -21,11 +21,11 @@ if (typeof person[personKey] !== "undefined") {
   alert(personKey + ' key exists!');
 } else {
   let newKeyValue = prompt('insert value');
-  person[personKey] = [(newKeyValue)];
+  person[personKey] = newKeyValue;
 }
 console.log(person);
-
-
+//
+//
 // //task 2
 // //Сгенерируйте объект, описывающий модель телефона, заполнив все свойства значениями,
 // //прочитанными из prompt (например: brand, model, resolution, color...), не используя
@@ -41,28 +41,28 @@ var phone = {
 person.phone = phone;
 
 console.log(person);
-
-
-// //task 3
-// //Запустите бесконечный цикл. В цикле вызывайте prompt, в котором пишется либо delete,
-// //либо update. В зависимости от указанного действия, удаляйте или добавляйте (редактируйте)
-// //свойство в объекте персоны (которая уже имеет телефон). Какое именно свойство удалять
-// //или добавлять - также читается из prompt. Какое значение будет у добавленного
-// //свойства - тоже берется из prompt. При нажатии на Отмена при появлении prompt редактирование
-// //person заканчивается. И обновленные данные распечатываются в консоли.
-
-let i = '';
+//
+//
+// // //task 3
+// // //Запустите бесконечный цикл. В цикле вызывайте prompt, в котором пишется либо delete,
+// // //либо update. В зависимости от указанного действия, удаляйте или добавляйте (редактируйте)
+// // //свойство в объекте персоны (которая уже имеет телефон). Какое именно свойство удалять
+// // //или добавлять - также читается из prompt. Какое значение будет у добавленного
+// // //свойства - тоже берется из prompt. При нажатии на Отмена при появлении prompt редактирование
+// // //person заканчивается. И обновленные данные распечатываются в консоли.
+//
+let action = '';
 
 while (true){
-  let i = prompt('choose the action');
-    if (i == 'update'){
+  let action = prompt('choose the action');
+    if (action == 'update'){
     let addKeyName = prompt('insert key name to be added');
     let addKeyValue = prompt('insert ' + addKeyName + ' value');
     person[addKeyName] = [(addKeyValue)];
-  } else if (i == 'delete'){
+  } else if (action == 'delete'){
     let deleteKeyName = prompt('insert key name to be deleted');
     delete person.deleteKeyName;
-  } else if (i === null){
+  } else if (action === null){
     break;
   } else {
     alert('wrong action');
@@ -78,7 +78,7 @@ console.log(person);
 //(работа с DOM - с использованием методов Native JS).
 
 let list = document.createElement('dl');
-document.body.append(list);
+document.body.appendChild(list);
 
 for (var key in person) {
 
@@ -87,7 +87,7 @@ for (var key in person) {
 	dt.innerText = key;
 
 	let dd = document.createElement('dd');
-	dd.innerText = parent[key];
+	dd.innerText = person[key];
 
 	list.appendChild(dt);
 	list.appendChild(dd);
