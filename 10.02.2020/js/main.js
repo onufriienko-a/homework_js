@@ -7,23 +7,20 @@ let arr = [1, 2, 3, 'a', 'b', 'c', '4', '5', '6'];
 let sum = 0;
 
 for(let i = 0; i < arr.length; i++){
-  if (isNaN(arr[i]) == true){
-    continue;
-  } else {
+  if (isNaN(arr[i]) == !true){
     let item = +(arr[i]);
     sum += item;
-  }
 }
 console.log(sum);
 alert(sum);
 
 
-// //task 2
-// //Создайте массив со значениями: ‘AngularJS’, ‘jQuery’
-// //Добавьте в начало массива значение ‘Backbone.js’
-// //Добавьте в конец массива значения ‘ReactJS’ и ‘Vue.js’
-// //Добавьте в массив значение ‘CommonJS’ вторым элементом
-// //Найдите и удалите из массива значение ‘jQuery’, выведите его в alert со словами “Это здесь лишнее”
+//task 2
+//Создайте массив со значениями: ‘AngularJS’, ‘jQuery’
+//Добавьте в начало массива значение ‘Backbone.js’
+//Добавьте в конец массива значения ‘ReactJS’ и ‘Vue.js’
+//Добавьте в массив значение ‘CommonJS’ вторым элементом
+//Найдите и удалите из массива значение ‘jQuery’, выведите его в alert со словами “Это здесь лишнее”
 
 let frameworks = ['AngularJS', 'JQuery'];
 
@@ -108,9 +105,9 @@ alert(sum);
 //Используя вложенные циклы, сформируйте двумерный массив, содержащий таблицу умножения:
 
 let tableArr = [];
-let tablePartArr = [];
 
 for (let i = 10; i >= 1; i--){
+  let tablePartArr = [];
   for (let j = 10; j >= 1; j--){
     let result = `${i} x ${j} = ${i * j}`;
     tablePartArr.unshift(result);

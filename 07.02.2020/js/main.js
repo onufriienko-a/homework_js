@@ -72,7 +72,7 @@ while (true){
 console.log(person);
 
 
-//task 4 (dd returns undefined)
+//task 4
 //Динамически (скриптом) создайте HTML элемент <dl>. Переберите в цикле (for..in) сгенерированный
 //ранее объект person, добавляя dt - для имени свойства и dd - для значения свойства
 //(работа с DOM - с использованием методов Native JS).
@@ -93,11 +93,40 @@ for (var key in person) {
 	list.appendChild(dd);
 }
 
-// //task 5
-// //Создайте объект dates для хранения дат. Первая дата – позавчера. Вторая дата – текущая дата
-// //(new Date) минус 365 дней. Из prompt читается дата в формате yyyy-MM-dd. Проверьте,
-// //попадает ли введенная дата в диапазон дат объекта dates.
+//task 5
+//Создайте объект dates для хранения дат. Первая дата – позавчера. Вторая дата – текущая дата
+//(new Date) минус 365 дней. Из prompt читается дата в формате yyyy-MM-dd. Проверьте,
+//попадает ли введенная дата в диапазон дат объекта dates.
 
-// let dates = {
-//   date1: new Date()
-// }
+let dateToCheck = new Date (prompt('insert the date', 'yyyy-MM-dd'));
+let dates = {
+  date1: new Date(2020, 01, 07),
+  date2: new Date(2019, 01, 07)
+}
+
+if ((dateToCheck <= dates['date1']) && (dateToCheck >= dates['date2'])){
+  alert('inserted date meets the requirements');
+} else {
+  alert('wrong date');
+}
+
+// //task 6
+// //Создайте структуру данных, полностью описывающую html-разметку картинки.
+// //С помощью методов браузера добавьте ее на страницу со всеми атрибутами, читая
+// //значения свойств из созданного объекта.
+// //<img src="https://www.google.com.ua/logos/doodles/2017/bella-akhmadulinas-80th-birthday-5134676388741120.3-law.gif"
+// // alt="" style="border: 1px solid #ccc" width="200" />
+
+let image = {
+src:'https://www.google.com.ua/logos/doodles/2017/bella-akhmadulinas-80th-birthday-5134676388741120.3-law.gif',
+alt:'',
+width:200,
+style:{
+	border:{
+	borderWidth :'1px',
+	style :'solid',
+	color :'#ccc'
+  }
+}
+}
+console.log(image);
